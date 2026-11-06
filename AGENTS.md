@@ -11,3 +11,10 @@ Write all comments, docstrings, and documentation in ASD-STE100 Simplified Techn
 - Use American spelling, but avoid American idioms.
 
 When committing make sure to commit both the main repository and the `site` submodule.  Follow the general instructions about commits.
+
+Always keep the `site` submodule in sync with the main repository:
+
+- After a change to `docs/`, run `make docs` and commit the result in `site`.
+- Commit `site` first.  Then commit the new `site` pointer in the main repository.
+- When you push, always push both repositories.  Push `site` first, then push the main repository.
+- The `site` submodule is usually on a detached HEAD.  Push it with `git -C site push origin HEAD:main`.
