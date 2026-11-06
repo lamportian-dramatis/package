@@ -76,6 +76,9 @@ docs: gallery
 	@mkdir -p docs/gallery && cp $(IMAGES) docs/gallery/
 	$(SPHINX) -b html -d .doctrees docs site
 	@touch site/.nojekyll
+	@# Sphinx keeps a backup of `.buildinfo` when the configuration changes.  The site does not use
+	@# the backup, and an untracked file marks the submodule as dirty, so the build removes it.
+	@rm -f site/.buildinfo.bak
 	@git -C site status --short
 
 ## Watch the sources and serve the result at http://localhost:4983, rebuilding on every save.  It
