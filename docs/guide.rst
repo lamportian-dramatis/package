@@ -83,13 +83,13 @@ the reference resolves to it and it numbers alongside the document's other figur
 ----
 
 .. [#sync-semantics] As an example of semantics you might consider `sync`:func:.  This symbolism is
-   actually a convenience over a **whole synchronization protocol**.  The protocol should provides
+   actually a convenience over a **whole synchronization protocol**.  The protocol should provide
    the expected guarantees that both replicas will agree on the exchanged values.
 
    In practice a ``sync`` might really look like
 
    .. image:: gallery/sync-explained.png
 
-   We have implemented a replicated system, in which *syncs* can be retried so that failure in the
-   node after the server's HTTP handler committed, but before the node's DB commit happened can be
-   achieved by simply executing the same SYNC protocol.
+   We have implemented a replicated system, in which *syncs* can be retried.  A failure in the node
+   after the server's HTTP handler committed, but before the node's DB commit happened, can succeed
+   afterwards by replaying the entire SYNC.
