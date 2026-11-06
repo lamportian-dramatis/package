@@ -94,6 +94,15 @@ code.literal {
     font-size: 1em;
 }
 
+/* The Pygments style sets a gray background on code blocks, and this background ignores the palette
+   in conf.py.  This rule gives code blocks the secondary background of the palette, in light mode
+   and in dark mode.  The second selector has the same specificity as the dark-mode rules of
+   Pygments.  This file loads after the Pygments file, so this rule wins. */
+.highlight,
+body[data-theme] .highlight {
+    background: var(--color-background-secondary);
+}
+
 /* The sidebar brand is the mark and the name on one line.  Furo stacks the brand in a column, for a
    logo centred above the title; this turns it on its side, which is all the arrangement needs.  The
    name keeps the vertical margins the theme gives it, so the brand still sits where it did. */

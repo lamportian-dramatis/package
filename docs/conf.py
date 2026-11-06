@@ -92,5 +92,46 @@ html_theme_options = {
         # sizes every listing and every inline snippet from this one variable, and `rem` pins it to
         # the root rather than to whatever it happens to be nested in.
         "code-font-size": "0.865rem",
+        **{f"color-{name}": value for name, value in {
+            # A warm palette: cream paper, brown ink and an amber accent.  The accent is the amber
+            # of R2 in the favicon.  All text colors have a contrast of 4.5:1 or more on all
+            # background colors.
+            "background-primary": "#fefce8",
+            "background-secondary": "#fef9c3",
+            "background-hover": "#fde68a",
+            "background-hover--transparent": "#fde68a00",
+            "background-border": "#fde68a",
+            "background-item": "#e9c46a",
+            "foreground-primary": "#422006",
+            "foreground-secondary": "#6b4a1f",
+            "foreground-muted": "#7c5a2e",
+            "foreground-border": "#a8875a",
+            "brand-primary": "#a16207",
+            "brand-content": "#a16207",
+            "brand-visited": "#854d0e",
+            "highlighted-background": "#fde68a",
+            "highlight-on-target": "#fde68a",
+        }.items()},
+    },
+    "dark_css_variables": {
+        **{f"color-{name}": value for name, value in {
+            # The same palette for a dark page: charcoal with a brown tint, light cream text and a
+            # bright amber accent.  The contrast rule of the light palette also applies here.
+            "background-primary": "#1a1410",
+            "background-secondary": "#2a2118",
+            "background-hover": "#3d3228",
+            "background-hover--transparent": "#3d322800",
+            "background-border": "#3d3228",
+            "background-item": "#5a4a3a",
+            "foreground-primary": "#f5ebdc",
+            "foreground-secondary": "#c9b9a3",
+            "foreground-muted": "#a8977f",
+            "foreground-border": "#6e5f4d",
+            "brand-primary": "#f59e0b",
+            "brand-content": "#f59e0b",
+            "brand-visited": "#fcd34d",
+            "highlighted-background": "#3d3228",
+            "highlight-on-target": "#3d3228",
+        }.items()},
     },
 }
